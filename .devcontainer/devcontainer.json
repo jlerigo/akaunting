@@ -1,0 +1,30 @@
+{
+    "name": "Akaunting Laravel Dev Container",
+    "build": {
+        "context": "..",
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "bradlc.vscode-tailwindcss",
+                "ms-azuretools.vscode-docker",
+                "esbenp.prettier-vscode",
+                "formulahendry.auto-rename-tag",
+                "ms-vscode.vscode-json"
+            ],
+            "settings": {
+                "php.suggest.basic": false,
+                "editor.formatOnSave": true,
+                "intelephense.files.maxSize": 5000000
+            }
+        }
+    },
+    "forwardPorts": [80, 3000, 5173],
+    "postCreateCommand": "composer install && npm install",
+    "remoteUser": "vscode"
+}
